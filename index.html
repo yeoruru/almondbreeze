@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=1.0">
+    <title>아몬드 브리즈</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/script_main.js"></script>
+    <script type="text/javascript" src="js/formValidator.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="visual">
+            <div class="inner">
+                <h1 class="tit"><img src="img/main_tit.png" alt=""></h1>
+                <a href="javascript:void(0)" onclick="$('html, body').animate( { scrollTop : $('#section_1').offset().top }, 400 );" class="btn next"><img src="img/main_btn.png" alt=""></a>
+            </div>
+        </div>
+        <div class="con">
+            <form id="applyForm" name="applyForm" method="post" enctype="multipart/form-data" onsubmit="return false">
+            <!-- 콘텐츠 시작 -->
+            <section class="a" id="section_1">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_1.png" alt="성별과 나이를 알려주세요"></h2>
+                    <!-- 성별 -->
+                    <div class="box">
+                        <h3><img src="img/q_2.png" alt="성별"></h3>
+                        <input type="radio" name="sex" id="sex_M" value="M"><label for="sex_M">남성</label>
+                        <input type="radio" name="sex" id="sex_W" value="W"><label for="sex_W">여성</label>
+                    </div>
+                    <!-- 나이 -->
+                    <div class="box">
+                        <h3><img src="img/q_3.png" alt="성별"></h3>
+                        <input type="radio" name="age" id="age_A" value="A"><label for="age_A">25세 ~ 34세</label>
+                        <input type="radio" name="age" id="age_B" value="B"><label for="age_B">35세 ~ 44세</label>
+                    </div>
+                    <button class="next" onclick="applyFormObj.step1()"><img src="img/next_1.png" alt=""><img src="img/next_2.png" alt=""></button>
+                </div>
+            </section>
+            <section class="b" id="section_2">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_4.png" alt="아몬드 브리즈를 언제 즐기나요?"></h2>
+                    <!-- 질문1. 아몬드브리즈를 즐기는 순간은(중복선택가능) -->
+                    <div class="box">
+                        <input type="checkbox" name="survey_1[]" id="survey_1_A" value="A"><label for="survey_1_A">사무실에서</label>
+                        <input type="checkbox" name="survey_1[]" id="survey_1_B" value="B"><label for="survey_1_B">운동 전/후에</label>
+                        <input type="checkbox" name="survey_1[]" id="survey_1_C" value="C"><label for="survey_1_C">식사 대신에</label>
+                        <input type="checkbox" name="survey_1[]" id="survey_1_D" value="D"><label for="survey_1_D">수시로</label>
+                        <p>기타 (자유롭게 서술해주세요)</p>
+                        <textarea name="survey_1_etc" placeholder="자유롭게 서술해주세요(최대200자)" maxlength="200"></textarea>
+                    </div>
+                    <div class="scroll">
+                        <a href="#" class="back"><img src="img/back_1.png" alt=""><img src="img/back_2.png" alt=""></a>
+                        <button onclick="applyFormObj.step2()" class="next"><img src="img/next_1.png" alt=""><img src="img/next_2.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+            <section class="b" id="section_3">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_5.png" alt="아몬드 브리즈를 선택하는 이유는?"></h2>
+                    <!-- 질문2. 아몬드브리즈를 선택하는 이유는(중복선택가능) -->
+                    <div class="box">
+                        <input type="checkbox" name="survey_2[]" id="survey_2_A" value="A"><label for="survey_2_A">낮은 칼로리</label>
+                        <input type="checkbox" name="survey_2[]" id="survey_2_B" value="B"><label for="survey_2_B">건강한 음료</label>
+                        <input type="checkbox" name="survey_2[]" id="survey_2_C" value="C"><label for="survey_2_C">맛</label>
+                        <span></span>
+                        <p>기타 (자유롭게 서술해주세요)</p>
+                        <textarea name="survey_2_etc" placeholder="자유롭게 서술해주세요(최대200자)" maxlength="200"></textarea>
+                    </div>
+                    <div class="scroll">
+                        <a href="#" class="back"><img src="img/back_1.png" alt=""><img src="img/back_2.png" alt=""></a>
+                        <button onclick="applyFormObj.step3()" class="next"><img src="img/next_1.png" alt=""><img src="img/next_2.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+            <section class="c" id="section_4">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_6.png" alt="아몬드 브리즈에 대한 선호도를 잘 나타내는 영상을 점수로 표현해 주세요"></h2>
+                    <!-- 광고영상 서베이1 -->
+                    <ul class="list">
+                        <li>
+                            <h3 class="tit">A. 댄스편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_a" id="answer1_a_1" value="1"><label for="answer1_a_1">1</label>
+                                <input type="radio" name="answer1_a" id="answer1_a_2" value="2"><label for="answer1_a_2">2</label>
+                                <input type="radio" name="answer1_a" id="answer1_a_3" value="3"><label for="answer1_a_3">3</label>
+                                <input type="radio" name="answer1_a" id="answer1_a_4" value="4"><label for="answer1_a_4">4</label>
+                                <input type="radio" name="answer1_a" id="answer1_a_5" value="5"><label for="answer1_a_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">B. 홈트편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_b" id="answer1_b_1" value="1"><label for="answer1_b_1">1</label>
+                                <input type="radio" name="answer1_b" id="answer1_b_2" value="2"><label for="answer1_b_2">2</label>
+                                <input type="radio" name="answer1_b" id="answer1_b_3" value="3"><label for="answer1_b_3">3</label>
+                                <input type="radio" name="answer1_b" id="answer1_b_4" value="4"><label for="answer1_b_4">4</label>
+                                <input type="radio" name="answer1_b" id="answer1_b_5" value="5"><label for="answer1_b_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">C. GYM편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_c" id="answer1_c_1" value="1"><label for="answer1_c_1">1</label>
+                                <input type="radio" name="answer1_c" id="answer1_c_2" value="2"><label for="answer1_c_2">2</label>
+                                <input type="radio" name="answer1_c" id="answer1_c_3" value="3"><label for="answer1_c_3">3</label>
+                                <input type="radio" name="answer1_c" id="answer1_c_4" value="4"><label for="answer1_c_4">4</label>
+                                <input type="radio" name="answer1_c" id="answer1_c_5" value="5"><label for="answer1_c_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">D. 캠핑편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_d" id="answer1_d_1" value="1"><label for="answer1_d_1">1</label>
+                                <input type="radio" name="answer1_d" id="answer1_d_2" value="2"><label for="answer1_d_2">2</label>
+                                <input type="radio" name="answer1_d" id="answer1_d_3" value="3"><label for="answer1_d_3">3</label>
+                                <input type="radio" name="answer1_d" id="answer1_d_4" value="4"><label for="answer1_d_4">4</label>
+                                <input type="radio" name="answer1_d" id="answer1_d_5" value="5"><label for="answer1_d_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">E. 출근길편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_e" id="answer1_e_1" value="1"><label for="answer1_e_1">1</label>
+                                <input type="radio" name="answer1_e" id="answer1_e_2" value="2"><label for="answer1_e_2">2</label>
+                                <input type="radio" name="answer1_e" id="answer1_e_3" value="3"><label for="answer1_e_3">3</label>
+                                <input type="radio" name="answer1_e" id="answer1_e_4" value="4"><label for="answer1_e_4">4</label>
+                                <input type="radio" name="answer1_e" id="answer1_e_5" value="5"><label for="answer1_e_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">F. 아침식사편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer1_f" id="answer1_f_1" value="1"><label for="answer1_f_1">1</label>
+                                <input type="radio" name="answer1_f" id="answer1_f_2" value="2"><label for="answer1_f_2">2</label>
+                                <input type="radio" name="answer1_f" id="answer1_f_3" value="3"><label for="answer1_f_3">3</label>
+                                <input type="radio" name="answer1_f" id="answer1_f_4" value="4"><label for="answer1_f_4">4</label>
+                                <input type="radio" name="answer1_f" id="answer1_f_5" value="5"><label for="answer1_f_5">5</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="scroll">
+                        <a href="#" class="back"><img src="img/back_1.png" alt=""><img src="img/back_2.png" alt=""></a>
+                        <button onclick="applyFormObj.step4()" class="next"><img src="img/next_1.png" alt=""><img src="img/next_2.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+            <section class="c" id="section_5">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_7.png" alt="아몬드 브리즈를 마시고 싶어지는 영상을 점수로 표현해 주세요"></h2>
+                    <!-- 광고영상 서베이2 -->
+                    <ul class="list">
+                        <li>
+                            <h3 class="tit">A. 댄스편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_a" id="answer2_a_1" value="1"><label for="answer2_a_1">1</label>
+                                <input type="radio" name="answer2_a" id="answer2_a_2" value="2"><label for="answer2_a_2">2</label>
+                                <input type="radio" name="answer2_a" id="answer2_a_3" value="3"><label for="answer2_a_3">3</label>
+                                <input type="radio" name="answer2_a" id="answer2_a_4" value="4"><label for="answer2_a_4">4</label>
+                                <input type="radio" name="answer2_a" id="answer2_a_5" value="5"><label for="answer2_a_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">B. 홈트편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_b" id="answer2_b_1" value="1"><label for="answer2_b_1">1</label>
+                                <input type="radio" name="answer2_b" id="answer2_b_2" value="2"><label for="answer2_b_2">2</label>
+                                <input type="radio" name="answer2_b" id="answer2_b_3" value="3"><label for="answer2_b_3">3</label>
+                                <input type="radio" name="answer2_b" id="answer2_b_4" value="4"><label for="answer2_b_4">4</label>
+                                <input type="radio" name="answer2_b" id="answer2_b_5" value="5"><label for="answer2_b_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">C. GYM편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_c" id="answer2_c_1" value="1"><label for="answer2_c_1">1</label>
+                                <input type="radio" name="answer2_c" id="answer2_c_2" value="2"><label for="answer2_c_2">2</label>
+                                <input type="radio" name="answer2_c" id="answer2_c_3" value="3"><label for="answer2_c_3">3</label>
+                                <input type="radio" name="answer2_c" id="answer2_c_4" value="4"><label for="answer2_c_4">4</label>
+                                <input type="radio" name="answer2_c" id="answer2_c_5" value="5"><label for="answer2_c_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">D. 캠핑편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_d" id="answer2_d_1" value="1"><label for="answer2_d_1">1</label>
+                                <input type="radio" name="answer2_d" id="answer2_d_2" value="2"><label for="answer2_d_2">2</label>
+                                <input type="radio" name="answer2_d" id="answer2_d_3" value="3"><label for="answer2_d_3">3</label>
+                                <input type="radio" name="answer2_d" id="answer2_d_4" value="4"><label for="answer2_d_4">4</label>
+                                <input type="radio" name="answer2_d" id="answer2_d_5" value="5"><label for="answer2_d_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">E. 출근길편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_e" id="answer2_e_1" value="1"><label for="answer2_e_1">1</label>
+                                <input type="radio" name="answer2_e" id="answer2_e_2" value="2"><label for="answer2_e_2">2</label>
+                                <input type="radio" name="answer2_e" id="answer2_e_3" value="3"><label for="answer2_e_3">3</label>
+                                <input type="radio" name="answer2_e" id="answer2_e_4" value="4"><label for="answer2_e_4">4</label>
+                                <input type="radio" name="answer2_e" id="answer2_e_5" value="5"><label for="answer2_e_5">5</label>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="tit">F. 아침식사편</h3>
+                            <div class="video-wrap">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/oNXkQ3ANPL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="check">
+                                <input type="radio" name="answer2_f" id="answer2_f_1" value="1"><label for="answer2_f_1">1</label>
+                                <input type="radio" name="answer2_f" id="answer2_f_2" value="2"><label for="answer2_f_2">2</label>
+                                <input type="radio" name="answer2_f" id="answer2_f_3" value="3"><label for="answer2_f_3">3</label>
+                                <input type="radio" name="answer2_f" id="answer2_f_4" value="4"><label for="answer2_f_4">4</label>
+                                <input type="radio" name="answer2_f" id="answer2_f_5" value="5"><label for="answer2_f_5">5</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="scroll">
+                        <a href="#" class="back"><img src="img/back_1.png" alt=""><img src="img/back_2.png" alt=""></a>
+                        <button onclick="applyFormObj.step5()" class="next"><img src="img/next_1.png" alt=""><img src="img/next_2.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+            <section class="d" id="section_6">
+                <div class="inner">
+                    <h2 class="question"><img src="img/q_8.png" alt="약관동의"></h2>
+                    <!-- 약관동의, 이름, 폰번호, 희망제품 -->
+                    <div class="formBox">
+                        <div class="txtBox">
+                            * 본인은 14세 이상이며, 이용약관 및 개인정보 수집 및 이용에 동의합니다. <br>
+                            <b>[ 개인정보 관련 안내 ]</b>
+                            <ul>
+                                <li>개인정보 수집 및 이용 목적 : <br>아몬드브리즈 설문조사 이벤트 당첨자 확인 및 경품 발송</li>
+                                <li>개인정보 수집 항목 : 성별, 연령대, 이름, 연락처, 희망 제품</li>
+                                <li>개인정보 보유 및 이용기간 : 수집 및 이용목적 달성 시까지</li>
+                                <li>개인정보 수집 및 이용에 동의하지 않으실 수 있으나, 동의하지 않으실 경우 <br>이벤트 응모 및 당첨이 취소됩니다.</li>
+                                <li>수집된 개인정보는 당첨자 경품 발송 완료 후 1개월 이내 완전히 파기되며, <br>당첨자 확인 및 배송 정보 등으로만 사용됩니다.</li>
+                                <li>본 이벤트 경품 발송 확인 외에 다른 용도로 사용되지 않습니다.</li>
+                            </ul>
+                        </div>
+                        <label class="check"><input type="checkbox" name="agmtYn"><span class="tit">동의합니다.</span></label>
+                        <h3><img src="img/q_9.png" alt="이름"></h3>
+                        <input type="text" name="name" placeholder="이름을 입력해 주세요.">
+                        <h3><img src="img/q_10.png" alt="휴대폰 번호"></h3>
+                        <input type="text" name="phone" placeholder="'-'를 제외하고 입력해주세요." maxlength="11">
+                        <h3><img src="img/q_11.png" alt="희망 제품"></h3>
+                        <div class="box">
+                            <input type="radio" name="gift" id="gift_A" value="A"><label for="gift_A">아몬드브리즈<br>언스위트</label>
+                            <input type="radio" name="gift" id="gift_B" value="B"><label for="gift_B">아몬드브리즈<br>식이섬유</label>
+                            <input type="radio" name="gift" id="gift_C" value="C"><label for="gift_C">아몬드브리즈<br>프로틴</label>
+                        </div>
+                    </div>
+                    <!-- 제출 -->
+                    <button class="btn" onclick="applyFormObj.onSubmit();"><img src="img/main_btn2.png" alt="제출하기"></button>
+                    <p class="txt">
+                        - 당첨자 발표 : 00월 00일<br>
+                        - 입력한 연락처로 당첨자 분들께 개별 경품 발송해드립니다.
+                    </p>
+                </div>
+            </section>
+            <!-- 콘텐츠 끝 -->
+            </form>
+            <!-- footer -->
+            <footer>
+                <div class="inner">
+                    <h1 class="tit"><img src="img/footer_tit.png" alt=""></h1>
+                </div>
+            </footer>
+        </div>
+    </div><!-- //wrap -->
+
+<script type="text/javascript">
+    var applyFormObj = {
+        validator : null
+        ,form : null
+
+        ,inputSex : null
+        ,inputAge : null
+        ,inputSurvey_1_input : null
+        ,inputSurvey_1_text : null
+        ,inputSurvey_2_input : null
+        ,inputSurvey_2_text : null
+        ,inputName : null
+        ,inputPhone : null
+        ,inputGift : null
+        ,agreebtn : null
+
+        ,answer1_a : null
+        ,answer1_b : null
+        ,answer1_c : null
+        ,answer1_d : null
+        ,answer1_e : null
+        ,answer1_f : null
+        ,answer2_a : null
+        ,answer2_b : null
+        ,answer2_c : null
+        ,answer2_d : null
+        ,answer2_e : null
+        ,answer2_f : null
+
+        ,init : function () {
+            this.validator = new FormValidator();
+            this.form = $('#applyForm');
+            this.inputSex = this.form.find("input[name=sex]");
+            this.inputAge = this.form.find("input[name=age]");
+            this.inputSurvey_1_input = this.form.find("input[name='survey_1[]']");
+            this.inputSurvey_1_text = this.form.find("textarea[name=survey_1_etc]");
+            this.inputSurvey_2_input = this.form.find("input[name='survey_2[]']");
+            this.inputSurvey_2_text = this.form.find("textarea[name=survey_2_etc]");
+            this.inputName = this.form.find("input[name=name]");
+            this.inputPhone = this.form.find("input[name=phone]");
+            this.inputGift = this.form.find("input[name=gift]");
+            this.agreebtn = this.form.find("input[name=agmtYn]"); //취급방침
+
+            this.answer1_a = this.form.find("input[name=answer1_a]");
+            this.answer1_b = this.form.find("input[name=answer1_b]");
+            this.answer1_c = this.form.find("input[name=answer1_c]");
+            this.answer1_d = this.form.find("input[name=answer1_d]");
+            this.answer1_e = this.form.find("input[name=answer1_e]");
+            this.answer1_f = this.form.find("input[name=answer1_f]");
+            this.answer2_a = this.form.find("input[name=answer2_a]");
+            this.answer2_b = this.form.find("input[name=answer2_b]");
+            this.answer2_c = this.form.find("input[name=answer2_c]");
+            this.answer2_d = this.form.find("input[name=answer2_d]");
+            this.answer2_e = this.form.find("input[name=answer2_e]");
+            this.answer2_f = this.form.find("input[name=answer2_f]");
+
+            this.registEvent();
+        }
+
+        ,registEvent : function () {
+            var _this = this;
+            _this.keyUpEvent();
+        }
+
+        ,onSubmit : function () {
+            var _this = this;
+
+            if(_this.validCheck()){
+                var _data = _this.form.serialize();
+                alert('테스트 서버에서는 지원하지 않습니다.');
+                /*$.ajax({
+                    type: 'POST',
+                    url: '/front/dreamok/form_ok',
+                    data: _data,
+                    success: function(data) {
+                        var obj = $.parseJSON(data);
+                        if (obj.is_valid == "1") {
+                            alert("이미 신청하셨습니다.");
+                        } else {
+                            $('#applyForm')[0].reset()
+                            alert("신청이 완료되었습니다.");
+                            $('html, body').animate( { scrollTop : ($('footer').offset().top) }, 400 );
+                        }
+                    }
+                });*/
+            }
+        }
+
+        ,validCheck : function () {
+            var _this = this;
+
+            if(!_this.validator.isChecked(_this.inputSex, "성별을 선택해주세요")){
+                _this.moveEvent($('#section_1').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.inputAge, "연령대를 선택해주세요")){
+                _this.moveEvent($('#section_1').offset().top);
+                return false;
+            }
+            if( !(_this.inputSurvey_1_input.is(":checked") || _this.inputSurvey_1_text.val()!='') ){
+                alert('아몬드 브리즈를 즐기는 순간을 선택해주세요.');
+                _this.moveEvent($('#section_2').offset().top);
+                _this.inputSurvey_1_input.focus();
+                return false;
+            }
+            if( !(_this.inputSurvey_2_input.is(":checked") || _this.inputSurvey_2_text.val()!='') ){
+                alert('아몬드 브리즈를 선택하는 이유를 선택해주세요.');
+                _this.moveEvent($('#section_3').offset().top);
+                _this.inputSurvey_2_input.focus();
+                return false;
+            }
+
+            if(!_this.validator.isChecked(_this.answer1_a, "A.댄스편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer1_b, "B.홈트편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer1_c, "C.GTM편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer1_d, "D.캠핑편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer1_e, "E.출근길편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer1_f, "F.아침식사 점수를 선택해주세요")){
+                _this.moveEvent($('#section_4').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_a, "A.댄스편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_b, "B.홈트편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_c, "C.GTM편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_d, "D.캠핑편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_e, "E.출근길편 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.answer2_f, "F.아침식사 점수를 선택해주세요")){
+                _this.moveEvent($('#section_5').offset().top);
+                return false;
+            }
+
+            if(!_this.validator.nullCheck(_this.inputName, "이름을 입력해주세요.")){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+            if(!_this.validator.nullCheck(_this.inputPhone, "전화번호를 입력해 주세요.")){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+            if(!_this.validator.lenCheck(_this.inputPhone, 8, "전화번호를 정확히 입력해 주세요.")){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.inputGift, "상품으로 받을 제품을 선택해주세요")){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+            if(!_this.validator.isPhoneNumber( $(_this.inputPhone).val(), "올바른 형식의 연락처를 입력해주세요." )){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+            if(!_this.validator.isChecked(_this.agreebtn, "개인정보 수집 및 이용 동의 체크는 필수입니다.")){
+                _this.moveEvent($('#section_6').offset().top);
+                return false;
+            }
+
+            return true;
+        }
+
+        ,keyUpEvent : function () {
+            var _this = this;
+
+            //연락처 keyup
+            $(_this.inputPhone).on('keyup', function (e) {
+                if(!_this.validator.isOnlyNum($(e.target).val())){
+                    $(e.target).val('');
+                }
+            })
+        },
+
+        moveEvent : function (top) {
+            $('html, body').animate( { scrollTop : top }, 400 );
+        },
+
+        step1 : function () {
+            var _this = this;
+            if(!_this.validator.isChecked(_this.inputSex, "성별을 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.inputAge, "연령대를 선택해주세요")) return false;
+            _this.moveEvent($('#section_2').offset().top);
+        },
+
+        step2 : function () {
+            var _this = this;
+            if( !(_this.inputSurvey_1_input.is(":checked") || _this.inputSurvey_1_text.val()!='') ){
+                alert('아몬드 브리즈를 즐기는 순간을 선택해주세요.');
+                _this.inputSurvey_1_input.focus();
+                return false;
+            }
+            _this.moveEvent($('#section_3').offset().top);
+        },
+
+        step3 : function () {
+            var _this = this;
+            if( !(_this.inputSurvey_2_input.is(":checked") || _this.inputSurvey_2_text.val()!='') ){
+                alert('아몬드 브리즈를 선택하는 이유를 선택해주세요.');
+                _this.inputSurvey_2_input.focus();
+                return false;
+            }
+            _this.moveEvent($('#section_4').offset().top);
+        },
+
+        step4 : function () {
+            var _this = this;
+            if(!_this.validator.isChecked(_this.answer1_a, "A.댄스편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer1_b, "B.홈트편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer1_c, "C.GTM편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer1_d, "D.캠핑편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer1_e, "E.출근길편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer1_f, "F.아침식사편 점수를 선택해주세요")) return false;
+
+            _this.moveEvent($('#section_5').offset().top);
+        },
+
+        step5 : function () {
+            var _this = this;
+            if(!_this.validator.isChecked(_this.answer2_a, "A.댄스편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer2_b, "B.홈트편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer2_c, "C.GTM편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer2_d, "D.캠핑편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer2_e, "E.출근길편 점수를 선택해주세요")) return false;
+            if(!_this.validator.isChecked(_this.answer2_f, "F.아침식사편 점수를 선택해주세요")) return false;
+
+            _this.moveEvent($('#section_6').offset().top);
+        },
+
+    }
+
+    $(function (){
+        applyFormObj.init();
+    })
+</script>
+</body>
+</html>
